@@ -1,0 +1,239 @@
+/*GENERAL STYLES*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /*COLORS*/
+    /*PRIMARY*/
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    /*NEUTRAL*/
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+}
+
+/*BODY STYLES*/
+body {
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.main--container {
+    height: 100vh;
+}
+
+/*COLOR ASSIGNING*/
+/*PAGE CONTAINER*/
+    /*BOX*/
+    .box {
+        background-color: #fff;
+    }
+        /*HERO*/
+        .hero_info--h1 {
+            color: var(--dark-blue);
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+        .hero_info--p {
+            color: var(--desaturated-blue);
+            font-size: .95rem;
+            font-weight: 300;
+        }
+            /*HERO FOOTER*/
+            .footer_plan--p {
+                color: var(--dark-blue);
+                font-size: .9rem;
+            }
+                .plan_p--annual {
+                    font-weight: 900;
+                }
+                .plan_p--price {
+                    color: var(--desaturated-blue);
+                    font-weight: 500;
+                }
+
+                .hero_footer--picture {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+            .hero_footer--href {
+                font-size: .8rem;
+                font-weight: 700;
+            }
+        /*FOOTER*/
+        .footer_buttons--proceed {
+            border: none;
+            color: #fff;
+            background-color: var(--bright-blue);
+            border-radius: 10px;
+            font-size: .9rem;
+            font-weight: 700;
+            box-shadow: 0px 25px 15px var(--pale-blue);
+        }
+        .footer_buttons--cancel {
+            border: none;
+            color: var(--desaturated-blue);
+            background-color: transparent;
+            font-weight: 900;
+            font-size: .9rem;
+        }
+
+/*MOBILE STYLES*/
+@media (min-width:320px) {
+/*BODY*/
+body {
+    background-image: url(images/pattern-background-mobile.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--pale-blue);
+}
+    /*CONTAINER*/
+    .main--container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+        /*BOX*/
+        .box {
+            border-radius: 20px;
+            width: 320px;
+            height: 570px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 
+            [start-row1] 1fr
+            [end-row1 start-row2] 2fr
+            [end-row2 start-row3] 1fr
+            [end-row3];
+        }
+            /*BOX HEADER*/
+            .box--header {
+                grid-row: start-row1 / end-row1;
+                height: 100%;
+                width: 100%;
+            }
+                .box_header--picture {
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                    width: 100%;
+                }
+                    .header_picture--img {
+                        border-top-right-radius: 20px;
+                        border-top-left-radius: 20px;
+                        height: 100%;
+                        width: 100%;
+                    }
+            /*BOX HERO*/
+            .box--hero {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+            }
+                .box_hero--info {
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                    .hero_info--h1 {
+                        margin-top: 10px;
+                        margin-bottom: 20px;
+                    }
+                    .hero_info--p {
+                        width: 75%;
+                        line-height: 25px;
+                    }
+                .box_hero--footer {
+                    width: 90%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                }
+                    .hero_footer--div {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 50%;
+                    }
+                    .hero_footer--plan {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+            /*FOOTER*/
+            .box--footer {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .box_footer--buttons {
+                height: 50%;
+                width: 85%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+                .footer_buttons--proceed {
+                    padding: 15px;
+                }
+                .footer_buttons--cancel {
+                    padding: 20px;
+                }
+
+}
+/*DESTOP STYLES*/
+@media (min-width: 1440px) {
+    body {
+        background-image: url(images/pattern-background-desktop.svg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: var(--pale-blue);
+    }
+
+    .box {
+        width: 475px;
+        height: 700px;
+    }
+        .hero_info--h1 {
+            margin-top: 10px;
+            font-size: 1.75rem;
+        }
+        .hero_info--p {
+            font-size: 1rem;
+        }
+
+        .footer_plan--p {
+            font-size: 1.05rem;
+        }
+
+        .hero_footer--href {
+            font-size: .9rem;
+        }
+
+        .hero_footer--div {
+            width: 40%;
+        }
+
+        .box_footer--buttons {
+            width: 75%;
+        }
+}
